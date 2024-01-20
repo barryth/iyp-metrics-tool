@@ -27,14 +27,3 @@ def query_neo4j(query):
     response = neo4j_database.get(query)
     neo4j_database.close()
     return response
-
-
-# if __name__ == "__main__":
-#     database_connection = Connection("bolt://localhost:7687", "neo4j", "password")
-#     # database_connection.get("MATCH (dn:DomainName {name: \'bol.com\'}) RETURN dn")
-#     result_array = database_connection.get("MATCH (dn:DomainName) "
-#                                            "WHERE dn.name in ['google.com', 'youtube.com', 'nu.nl'] "
-#                                            "MATCH (dn)-[m:MANAGED_BY]-(ans:AuthoritativeNameServer)-[rt:RESOLVES_TO]-(ip2:IP)-[p:PART_OF]-(px:Prefix)-[o:ORIGINATE | ROUTE_ORIGIN_AUTHORIZATION]-(a:AS) "
-#                                            "RETURN dn, COUNT(DISTINCT(ans)), COUNT(DISTINCT(px)), COUNT(DISTINCT(a))")
-#
-#     print(result_array)
